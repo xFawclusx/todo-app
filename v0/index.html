@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tareas</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    
+    <div class="completo">
+        <h1>LISTA DE TAREAS DE</h1>
+        <form>
+            <input id="ingresartarea" type="text" placeholder="Ingresar tarea">
+            <button id="agregarboton">+</button>
+        </form>
+        
+        <ol id="list">
+            <li>
+                <input type="checkbox">
+                <p>Tarea de ejemplo</p>
+                <button class="delete" onclick="eliminar(this)">Eliminar</button>
+            </li> 
+        </ol>
+        
+        
+    </div>
+
+
+
+
+</body>
+<script src="main.js"></script>
+</html>
