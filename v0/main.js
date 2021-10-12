@@ -2,6 +2,9 @@
 const ingresarTarea = document.getElementById ("ingresartarea");
 const agregarTarea = document.getElementById ("agregarboton");
 const listaDeTareas = document.getElementById ("list");
+let tareas = [];
+
+
 
 //agregar una funcion
 agregarTarea.addEventListener("click", function(e){
@@ -15,11 +18,21 @@ agregarTarea.addEventListener("click", function(e){
     `
     listaDeTareas.prepend(nuevoLi);
 
-    if (items.length === 0){
-        empty.styl.dysplay = "block"
+    lta = {
+        texto: ingresarTarea.value,
     }
+    
+    
+    tareas.push(lta);
+
+    tareastxt = JSON.stringify(tareas);
+
+    window.localStorage.setItem ("tareas", tareastxt) 
+    
+    
 
 });
+
 const eliminar = (botonEliminar) => {
     botonEliminar.parentElement.remove();
 }
