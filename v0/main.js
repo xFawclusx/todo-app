@@ -16,6 +16,11 @@ agregarTarea.addEventListener("click", function(e){
     <p>${textoTarea}</p>
     <button class="delete" onclick="eliminar(this)">🗑️</button>
     `
+    
+
+       
+
+
     listaDeTareas.prepend(nuevoLi);
 
     lta = {
@@ -35,5 +40,26 @@ agregarTarea.addEventListener("click", function(e){
 
 const eliminar = (botonEliminar) => {
     botonEliminar.parentElement.remove();
+}
+
+
+window.onload = function ()
+{
+    t= localStorage.getItem ("tareas");
+    t= JSON.parse(t);
+    for (i=0; i<= t.length -1; i++) {
+
+        var textoTarea = t[i].texto;
+        var nuevoLi = document.createElement("li");
+        nuevoLi.innerHTML = `
+        <input type="checkbox">
+        <p>${textoTarea}</p>
+        <button class="delete" onclick="eliminar(this)">🗑️</button>
+        `
+        listaDeTareas.prepend(nuevoLi);
+
+    }
+
+
 }
  
